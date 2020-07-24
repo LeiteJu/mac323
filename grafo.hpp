@@ -156,7 +156,7 @@ void Grafo::processa () {
             pilha.pop();
 
             if (regex[optopo] == '|') {
-                ant = pilha.top();
+                ant = pilha.top();  // '(' correspondente
                 pilha.pop();
                 this->addArco(ant, optopo + 1);
                 this->addArco(optopo, i);

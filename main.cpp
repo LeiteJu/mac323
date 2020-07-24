@@ -33,6 +33,8 @@ void testes (Grafo* grafo, string regex) {
         cout << ">>> ";
     }
 
+    cout << endl;
+
 }
 
 string mod_regex (string regex) {
