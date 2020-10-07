@@ -209,30 +209,30 @@ void Grafo::dfs (int v, vector<bool>& marcados) {
 bool reconhece (Grafo* grafo, string texto, string regex) {
 
     int n = regex.size();
-
+// 
     vector<bool> S (n+1, false);
     vector<int> T;
-
+// 
     // onde chegamos sem ler ninguem 
     grafo->dfs(0, S);
-
+// 
     for (int i = 0; i < (int) texto.size(); i++) {
-
+// 
         for (int j = 0; j < n; j++) {
-
+// 
             if (S[j] && regex[j] == texto[i])
                 T.push_back(j+1);
         }
-
+// 
         S.assign(n+1, false);
-
+// 
         for (int j = 0; j < (int) T.size(); j++) {
             grafo->dfs(T[j], S);
         }
         T.clear();
-
+// 
     }
-
+// 
     return S[n];
 
 }
